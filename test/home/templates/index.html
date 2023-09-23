@@ -1,0 +1,35 @@
+{% extends "partials/layout.html" %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock title %}
+
+{% block content %}
+    
+    <div class="container-fluid p-5" data-bs-theme="dark">
+
+        <div class="hstack align-items-start gap-3">
+
+            <div class="col top-0" id="notes-list">
+                <h1 class="text-light">All notes</h1>
+
+                <div class="row ">
+                    {% for note in notes %}
+                        {% include 'partials/note.html' %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="vr mx-3 text-light"></div>
+
+            <div class="col">
+                <h1 class="text-light">Add Note</h1>
+                {% include 'partials/form.html' %}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock content %}

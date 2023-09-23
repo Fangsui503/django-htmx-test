@@ -1,0 +1,7 @@
+<div class="card">
+    <h2 class="card-header">{{ note.title }}</h2>
+    <div class="card-body">
+        <p class="card-text">{{ note.note }}</p>
+        <button hx-delete="{% url "home:delete-note" note.id %}" hx-swap="outerHTML" hx-target="closest .card" class="btn btn-danger">Delete</button>
+    </div>
+</div>

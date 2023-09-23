@@ -1,0 +1,16 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+    {% block title %}<title>App</title>{% endblock title %}
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="bg-primary">
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
